@@ -10,22 +10,17 @@ def stairs_ok(s):
 
 
 def create_stairs(n, stairs):
-    #print 'creating stairs for n: ' + str(n)
     stairs[n] = set()
     for t in stairs[n-1]:
         cand = list(t)
         for i in range(len(cand)):
             candd = cand[:]
             candd[i] = candd[i]+ 1
-      #      print 'candidate: ' + str(candd)
             if stairs_ok(candd):
-    #            print 'stairs ok'
                 stairs[n].add(tuple(candd))
         candd = cand[:]
         candd.append(1)
-    #    print 'candidate: ' + str(candd)
         if stairs_ok(candd):
-    #        print 'stairs ok'
             stairs[n].add(tuple(candd))
 
 def solution(n):
