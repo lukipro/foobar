@@ -1,11 +1,9 @@
-#!/usr/local/bin/python2
 import numpy as np
 import fractions
 
 def solution(m):
     mat = np.matrix(m)
-    print mat
-    
+
     i = 0
     term_states = []
     temp_states = []
