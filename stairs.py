@@ -13,22 +13,15 @@ def ak(k):
         return 0
 
 def qk(k):
-    print 'calling qk(' + str(k) + ')'
     if k == 0:
-        print 'returning q[' + str(k) + '] = ' + str(1)
         return 1
     else:
         qkk = ak(k)
-        print 'adding +a[' + str(k) + '] = ' + str(ak(k))
-        print 'offsets: ' + str(get_offsets(k))
         for i in get_offsets(k):
             if i > 0:
-                print '-q[' + str(k-i) + '] = ' + str(-q[k-i])
                 qkk = qkk - q[k-i]
             else:
-                print '+q[' + str(k+i) + '] = ' + str(q[k+i])
                 qkk = qkk + q[k+i]
-        print 'returning q[' + str(k) + '] = ' + str(qkk)
         return qkk
 
 def get_offsets(n):
@@ -46,22 +39,13 @@ def solution(n):
         k.append((3*m*m-m)/2*(-1)**m)
         k.append((3*m*m+m)/2*(-1)**m)
     
-    print 'k: ' + str(k) 
-    
     for m in range(n):
         a.append((3*m*m-m)*(-1)**m)
         a.append((3*m*m+m)*(-1)**m)
     
-    print 'a: ' + str(a) 
-
-    for i in range(n):
-        print 'a(' + str(i) + '): ' + str(ak(i))
-
-
     for i in range(n+1):
         q.append(qk(i))
 
-    print q
-
+    return q[n]-1
 
 solution(200)
