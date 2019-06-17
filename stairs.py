@@ -35,17 +35,21 @@ def get_offsets(n):
     return offsets
 
 def solution(n):
+
+    if n==1 or n==2:
+        return 1
+
     for m in range(n):
         k.append((3*m*m-m)/2*(-1)**m)
         k.append((3*m*m+m)/2*(-1)**m)
-    
+
     for m in range(n):
         a.append((3*m*m-m)*(-1)**m)
         a.append((3*m*m+m)*(-1)**m)
-    
+
     for i in range(n+1):
         q.append(qk(i))
 
     return q[n]-1
 
-solution(200)
+print solution(10000)
