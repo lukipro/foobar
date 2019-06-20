@@ -41,4 +41,4 @@ def solution(M,F):
    
     return str(gen)
 
-print solution('2', '1')
+print solution('100000000000000000000000000000000000000000000000000', '1')
