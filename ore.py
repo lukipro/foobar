@@ -1,3 +1,5 @@
+#!/usr/local/bin/python2
+
 import numpy as np
 import fractions
 
@@ -68,3 +70,5 @@ def solution(m):
     res = np.append(res,kk)
 
     return res
+
+print solution([[0, 2, 1, 0, 0], [0, 0, 0, 3, 4], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]])
